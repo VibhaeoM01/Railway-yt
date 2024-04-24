@@ -13,7 +13,7 @@
 	color: white;
 }
 html { 
-  background: url(img/images.jpeg.) no-repeat center center fixed; 
+  background: url(img/bg1.jpg.) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -49,8 +49,8 @@ include("header.php"); ?>
 <A HREF="index.php">
 <IMG SRC="img/logo1.png" alt="Home" id="logo" width="150" height="150"></IMG>
 </A></div>
-<h1 align="center">Welcome to Indian Railways!</h1><br/><br/><br/>
-<h2 align="center">Have a safe journey with us</h2>
+<h1 align="center">Indian Railways!</h1><br/><br/><br/>
+<h2 align="center">SAFETY</h2>
 <br/><br/><br/>
 <?php
 if(isset($_SESSION['user_info']))

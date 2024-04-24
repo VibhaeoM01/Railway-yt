@@ -31,6 +31,11 @@ if (isset($_POST['submit'])) {
 <head>
     <title>Login</title>
 </head>
+     
+
+
+
+
 <script type="text/javascript">
     function validate()    {
         var EmailId=document.getElementById("email");
@@ -52,16 +57,16 @@ if (isset($_POST['submit'])) {
         return true;
     }
 </script>
+
 <style type="text/css">
     #loginarea{
-        background-color: white;
+        background-color: red;
         width: 30%;
         margin: auto;
         border-radius: 25px;
-        border: 2px solid blue;
+        border: 2px solid black;
         margin-top: 100px;
         background-color: rgba(0,0,0,0.2);
-        box-shadow: inset -2px -2px rgba(0,0,0,0.5);
         padding: 40px;
         font-family:sans-serif;
         font-size: 20px;
@@ -74,18 +79,18 @@ if (isset($_POST['submit'])) {
         -o-background-size: cover;
         background-size: cover;
     }
-    #submit    {
-        border-radius: 5px;
-        background-color: rgba(0,0,0,0);
-        padding: 7px 7px 7px 7px;
-        box-shadow: inset -1px -1px rgba(0,0,0,0.5);
-        font-family:"Comic Sans MS", cursive, sans-serif;
-        font-size: 17px;
-        margin:auto;
-        margin-top: 20px;
-        display:block;
-        color: white;
-    }
+    #submit {
+    border-radius: 5px;
+    background-color: green;
+    padding: 7px 7px 7px 7px;
+    box-shadow: -1px 1px 7px 3px green;
+    /* font-family: "Comic Sans MS", cursive, sans-serif; */
+    font-size: 17px;
+    margin: auto;
+    margin-top: 20px;
+    display: block;
+    color: white;
+    border: 1px;
     #logintext    {
         text-align: center;
     }
@@ -96,4 +101,19 @@ if (isset($_POST['submit'])) {
 <body>
     <?php include("header.php") ?>
     <div id="loginarea">
-    <form id="login
+    <form id="login"
+
+    <h1>Login Here TO Book Tickets!</h1>
+    <div id="loginarea">
+        <h1 style="">Login</h1>
+        <form id="loginForm" action="" method="post" onsubmit="return validate()">
+            <div id="logintext">
+                Email: <input type="text" id="email" name="email" required><br><br>
+                Password: <input type="password" id="pw" name="pw" required><br><br>
+                <input type="submit" id="submit" name="submit" value="Submit">
+            </div>
+        </form>
+</div>
+</body>
+</html>
+
