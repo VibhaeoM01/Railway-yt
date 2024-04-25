@@ -1,29 +1,40 @@
 <?php
+session_start();
+
 $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "Railways";
+$port = 3307;
 
 // Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli($servername, $username, $password, $dbname, $port);
 
 // Check connection
 if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
+    die("Connection failed: " . $conn->connect_error);
 }
 
-// Prepare and bind
-$stmt = $conn->prepare("INSERT INTO Passengers (firstName, lastName, email) VALUES (?, ?, ?)");
-$stmt->bind_param("sss", $firstName, $lastName, $email);
+// Check if the form is submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Prepare and bind
+    $stmt = $conn->prepare("INSERT INTO Passengers (firstName, lastName, email) VALUES (?, ?, ?)");
+    $stmt->bind_param("sss", $firstName, $lastName, $email);
 
-// Set parameters and execute
-$firstName = $_POST['firstName'];
-$lastName = $_POST['lastName'];
-$email = $_POST['email'];
-$stmt->execute();
+    // Set parameters
+    $firstName = $_POST['firstName'];
+    $lastName = $_POST['lastName'];
+    $email = $_POST['email'];
 
-echo "New records created successfully";
+    // Execute the statement
+    $stmt->execute();
 
-$stmt->close();
+    echo "New record created successfully";
+
+    // Close statement
+    $stmt->close();
+}
+
+// Close connection
 $conn->close();
 ?>
