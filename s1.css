@@ -10,8 +10,9 @@
 }
 .dark
 {
-	background-color: #000000a3;
-	color: black;
+	/* background-color: #000000a3; */
+	background-color: red;
+	color: white;
 }
 
 *{

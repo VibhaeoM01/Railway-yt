@@ -50,7 +50,7 @@ include("header.php"); ?>
 <IMG SRC="img/logo1.png" alt="Home" id="logo" width="150" height="150"></IMG>
 </A></div>
 <h1 align="center">Indian Railways!</h1><br/><br/><br/>
-<h2 align="center">SAFETY</h2>
+<h2 align="center">SAFETY|SECURITY|PUNCTUALITY</h2>
 <br/><br/><br/>
 <?php
 if(isset($_SESSION['user_info']))

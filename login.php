@@ -7,7 +7,7 @@ $password = "";
 $database= "Railways";
 $conn = new mysqli($servername, $username, $password, $database, $port);
 if (isset($_POST['submit'])) {
-    $conn = mysqli_connect($servername, $username, $password, $database, $port);
+    // $conn = mysqli_connect($servername, $username, $password, $database, $port);
     if(!$conn) {  
         echo "<script type='text/javascript'>alert('Database failed');</script>";
         die('Could not connect: '.mysqli_connect_error());  
@@ -90,9 +90,11 @@ if (isset($_POST['submit'])) {
     margin-top: 20px;
     display: block;
     color: white;
-    border: 1px;
+    border: 1px;}
     #logintext    {
         text-align: center;
+        padding: 31px;
+         font-size: xxx-large;
     }
     .data    {
         color: white;
@@ -100,14 +102,13 @@ if (isset($_POST['submit'])) {
 </style>
 <body>
     <?php include("header.php") ?>
-    <div id="loginarea">
-    <form id="login"
+    
+    <form id="login">
 
-    <h1>Login Here TO Book Tickets!</h1>
     <div id="loginarea">
-        <h1 style="">Login</h1>
+        <h1 style="text-align:center" >Login</h1>
         <form id="loginForm" action="" method="post" onsubmit="return validate()">
-            <div id="logintext">
+            <div style="text-align:center" id="logintext">
                 Email: <input type="text" id="email" name="email" required><br><br>
                 Password: <input type="password" id="pw" name="pw" required><br><br>
                 <input type="submit" id="submit" name="submit" value="Submit">
