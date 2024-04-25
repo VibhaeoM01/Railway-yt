@@ -4,7 +4,7 @@ $servername = "localhost";
 $port = 3307; // Adjust the port as needed
 $username = "root";
 $password = "";
-$database= "Railways";
+$database= "railways";
 $conn = new mysqli($servername, $username, $password, $database, $port);
 if (isset($_POST['submit'])) {
     // $conn = mysqli_connect($servername, $username, $password, $database, $port);
@@ -20,8 +20,12 @@ if (isset($_POST['submit'])) {
     if(!empty($user)){
         $_SESSION['user_info'] = $user['email']; 
         $message='Logged in successfully';
+        ?>
+        <script>window.location.href="success.php"</script>
+        <?php
     } else {
         $message = 'Wrong email or password.';
+        echo $message;
     }
     echo "<script type='text/javascript'>alert('$message');</script>";
 }
@@ -103,11 +107,11 @@ if (isset($_POST['submit'])) {
 <body>
     <?php include("header.php") ?>
     
-    <form id="login">
+    <form id="login" action="login.php" method="post">
 
     <div id="loginarea">
         <h1 style="text-align:center" >Login</h1>
-        <form id="loginForm" action="" method="post" onsubmit="return validate()">
+        <form id="loginForm" action="login.php" method="post" onsubmit="return validate()">
             <div style="text-align:center" id="logintext">
                 Email: <input type="text" id="email" name="email" required><br><br>
                 Password: <input type="password" id="pw" name="pw" required><br><br>

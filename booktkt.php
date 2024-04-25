@@ -101,7 +101,12 @@ $query="UPDATE passengers SET t_no='$row[t_no]' WHERE email='$email';";
 			<option value="mysoreexp" >Mysore Express - Talguppa to Mysore Jn</option>
 		</select>
 		<br/><br/>
+
+		<form action="passenger_info.php" method="post">
 		<input type="submit" name="submit" id="submit" class="button" />
+		</form>
+
+		
 	</form>
 	</div>
 	</body>
