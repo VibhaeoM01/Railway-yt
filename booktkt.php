@@ -9,6 +9,7 @@ $database= "Railways";
 $conn = new mysqli($servername, $username, $password, $database, $port);
 	if(empty($_SESSION['user_info'])){
 		echo "<script type='text/javascript'>alert('Please login before proceeding further!');</script>";
+		// exit;
 	}
 // $conn = mysqli_connect("localhost","root","","railway");
 if(!$conn){  

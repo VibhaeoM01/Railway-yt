@@ -5,7 +5,7 @@
 @import url(style.css);
 #logo	{ 
 	border-radius: 25px;
-    border: 1px solid blue; 
+    /* border: 1px solid blue;  */
     width: 100px;
     height: 100px; 
 }
